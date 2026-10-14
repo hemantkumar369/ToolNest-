@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function() {
+        try {
+          var origFetch = window.fetch;
+          var customFetch = typeof origFetch === 'function' ? origFetch.bind(window) : origFetch;
+          Object.defineProperty(window, 'fetch', {
+            get: function() { return customFetch; },
+            set: function(val) { customFetch = val; },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {}
+      })();
+    </script>
+    <title>ToolNest - Free Online PDF, Image, Developer & Productivity Tools</title>
+    <meta name="description" content="Fast, 100% private in-browser digital utility platform for PDF tools, image optimization, smart calculators, developer utilities, and productivity generators." />
+    <meta property="og:title" content="ToolNest - Free Online PDF, Image, Developer & Productivity Tools" />
+    <meta property="og:description" content="Fast, 100% private in-browser digital utility platform for PDF tools, image optimization, smart calculators, developer utilities, and productivity generators." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ToolNest" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ToolNest - Free Online Digital Utility Platform" />
+    <meta name="twitter:description" content="Comprehensive, fast, privacy-first free tools for PDF, Images, Calculators, Dev, and Productivity." />
+    <link rel="canonical" href="https://toolnest-hub.netlify.app/" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'><path d='M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5'/></svg>" />
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
